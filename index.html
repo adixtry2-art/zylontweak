@@ -174,64 +174,339 @@ body{
 
 .footer-text strong{color:var(--accent)}
 
-/* ========== PLACEHOLDER MOBILE ========== */
+/* ========== PAGINA MOBILE ========== */
 #mobilePage{
   display:none;
-  align-items:center;
-  justify-content:center;
-  padding:40px;
-  text-align:center;
+  flex-direction: column;
   background:linear-gradient(180deg,#000,#050505);
   z-index:100;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 #mobilePage.active{display:flex}
 
-.placeholder-content{
-  max-width:600px;
-  background:rgba(255,255,255,0.04);
-  border:2px solid rgba(255,255,255,0.08);
-  border-radius:24px;
-  padding:60px 40px;
+/* Mobile Header Fisso */
+.mobile-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.95);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(154,59,255,0.2);
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
-.placeholder-icon{
-  font-size:100px;
-  margin-bottom:30px;
-  filter:drop-shadow(0 8px 20px rgba(154,59,255,0.3));
+.mobile-logo{
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(154,59,255,0.4);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
-.placeholder-title{
-  font-size:42px;
-  font-weight:900;
-  margin-bottom:20px;
-  background:linear-gradient(135deg,var(--accent),#fff);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
+.mobile-title{
+  font-size: 22px;
+  font-weight: 900;
+  background: linear-gradient(90deg,var(--accent),#fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
 }
 
-.placeholder-text{
-  font-size:18px;
-  color:var(--muted);
-  margin-bottom:30px;
-  line-height:1.6;
+/* Contenuto scrollabile */
+.mobile-content{
+  margin-top: 80px;
+  padding: 20px;
+  padding-bottom: 40px;
 }
 
-.back-btn{
-  padding:16px 32px;
-  border-radius:14px;
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
-  border:0;
-  color:#fff;
-  font-weight:900;
-  cursor:pointer;
-  font-size:16px;
-  transition:0.3s var(--ease);
+.mobile-section{
+  margin-bottom: 40px;
 }
 
-.back-btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 10px 40px rgba(154,59,255,0.5);
+.mobile-section-title{
+  font-size: 32px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 25px;
+  background: linear-gradient(90deg,var(--accent),#fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Home Mobile */
+.mobile-hero{
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 30px 20px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.mobile-hero-logo{
+  width: 120px;
+  height: 120px;
+  border-radius: 24px;
+  margin: 0 auto 20px;
+  box-shadow: 0 15px 50px rgba(154,59,255,0.4);
+  display: block;
+}
+
+.mobile-hero-title{
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 12px;
+  background: linear-gradient(90deg,var(--accent),#711d92);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mobile-hero-sub{
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.mobile-features{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.mobile-feature{
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 20px 15px;
+  text-align: center;
+  transition: 0.3s var(--ease);
+}
+
+.mobile-feature:active{
+  transform: scale(0.97);
+  background: rgba(154,59,255,0.1);
+}
+
+.mobile-feature-icon{
+  font-size: 36px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 4px 10px rgba(154,59,255,0.3));
+}
+
+.mobile-feature h4{
+  font-size: 16px;
+  color: var(--accent);
+  margin-bottom: 5px;
+}
+
+.mobile-feature p{
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Product Cards Mobile */
+.mobile-product-card{
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+.mobile-product-card img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 15px;
+  background: #000;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.mobile-product-info h3{
+  font-size: 22px;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.mobile-product-desc{
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.mobile-product-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-price{
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--accent2);
+}
+
+.mobile-buy-btn{
+  padding: 12px 24px;
+  border-radius: 12px;
+  background: linear-gradient(90deg,var(--accent),var(--accent2));
+  border: 0;
+  color: #fff;
+  font-weight: 900;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s var(--ease);
+  font-size: 15px;
+}
+
+.mobile-buy-btn:active{
+  transform: scale(0.95);
+}
+
+/* Addons Mobile */
+.mobile-addon-title{
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--accent);
+  text-align: center;
+  margin: 30px 0 15px;
+}
+
+.mobile-addons{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-addon{
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-addon-name{
+  font-size: 15px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.mobile-addon-price{
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--accent2);
+}
+
+/* About Mobile */
+.mobile-about-card{
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  padding: 25px;
+}
+
+.mobile-about-card p{
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.mobile-about-card strong{
+  color: var(--accent);
+}
+
+/* Contact Cards Mobile */
+.mobile-contact-card{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  transition: 0.3s var(--ease);
+}
+
+.mobile-contact-card:active{
+  transform: scale(0.98);
+  background: rgba(154,59,255,0.1);
+  border-color: rgba(154,59,255,0.3);
+}
+
+.mobile-contact-icon{
+  font-size: 32px;
+  filter: drop-shadow(0 4px 10px rgba(154,59,255,0.3));
+}
+
+.mobile-contact-card h4{
+  font-size: 18px;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.mobile-contact-card p{
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.mobile-credits{
+  margin-top: 30px;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.mobile-credits p{
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.mobile-credits strong{
+  color: var(--accent);
+}
+
+/* Back Button Mobile */
+.mobile-back-section{
+  margin-top: 40px;
+  text-align: center;
+}
+
+.mobile-back-btn{
+  padding: 16px 32px;
+  border-radius: 14px;
+  background: linear-gradient(90deg,var(--accent),var(--accent2));
+  border: 0;
+  color: #fff;
+  font-weight: 900;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s var(--ease);
+  box-shadow: 0 8px 30px rgba(154,59,255,0.4);
+}
+
+.mobile-back-btn:active{
+  transform: scale(0.95);
 }
 
 /* ========== PAGINA DESKTOP (SITO COMPLETO) ========== */
@@ -419,14 +694,6 @@ footer{position:fixed;left:15px;bottom:15px;color:var(--muted);font-size:13px;z-
   .platform-desc{font-size:14px}
   .footer-text{font-size:13px;margin-top:30px}
   
-  /* Placeholder mobile */
-  #mobilePage{padding:20px}
-  .placeholder-content{padding:40px 25px}
-  .placeholder-icon{font-size:80px;margin-bottom:20px}
-  .placeholder-title{font-size:28px;margin-bottom:15px}
-  .placeholder-text{font-size:15px;margin-bottom:25px}
-  .back-btn{padding:14px 28px;font-size:15px}
-  
   /* Sito desktop su mobile */
   .shop-grid{grid-template-columns:1fr}
   .addons-list{grid-template-columns:1fr}
@@ -450,7 +717,7 @@ footer{position:fixed;left:15px;bottom:15px;color:var(--muted);font-size:13px;z-
 
   /* spinge il logo molto più in basso per farlo entrare tutto */
   #selectPage .logo-container {
-    margin-top: 180px !important; /* <-- AUMENTATO per farlo scendere del tutto */
+    margin-top: 280px !important; /* <-- AUMENTATO ULTERIORMENTE per maggiore visibilità */
     position: relative;
     z-index: 999;
     overflow: visible !important;
@@ -465,6 +732,7 @@ footer{position:fixed;left:15px;bottom:15px;color:var(--muted);font-size:13px;z-
 
   #selectPage {
     overflow: visible !important;
+    padding-top: 40px !important;
   }
 }
 
@@ -502,19 +770,176 @@ footer{position:fixed;left:15px;bottom:15px;color:var(--muted);font-size:13px;z-
   </div>
 </div>
 
-<!-- ========== PAGINA MOBILE PLACEHOLDER ========== -->
+<!-- ========== PAGINA MOBILE ========== -->
 <div id="mobilePage" class="page">
-  <div class="placeholder-content">
-    <div class="placeholder-icon">📱</div>
-    <h1 class="placeholder-title">Versione Mobile</h1>
-    <p class="placeholder-text">
-      La versione mobile del sito Zylon Tweak è attualmente in sviluppo. 
-      Torna presto per un'esperienza ottimizzata per dispositivi mobili!
-    </p>
-    <button onclick="showSelect()" class="back-btn">← Torna alla selezione</button>
+  <!-- Header Mobile -->
+  <div class="mobile-header">
+    <img src="zylon.jpeg" class="mobile-logo" alt="Zylon Logo">
+    <h1 class="mobile-title">Zylon Tweak</h1>
+  </div>
+
+  <!-- Contenuto scrollabile -->
+  <div class="mobile-content">
+    
+    <!-- Home Section -->
+    <div class="mobile-section mobile-home">
+      <div class="mobile-hero">
+        <img src="zylon.jpeg" alt="Zylon" class="mobile-hero-logo">
+        <h2 class="mobile-hero-title">La tua ottimizzazione definitiva.</h2>
+        <p class="mobile-hero-sub">Migliora stabilità, reattività e prestazioni con il tweak definitivo.</p>
+      </div>
+      
+      <div class="mobile-features">
+        <div class="mobile-feature">
+          <div class="mobile-feature-icon">⚡</div>
+          <h4>Boost immediato</h4>
+          <p>Aumento FPS e stabilità</p>
+        </div>
+        <div class="mobile-feature">
+          <div class="mobile-feature-icon">🔥</div>
+          <h4>Reattività</h4>
+          <p>Input più veloci</p>
+        </div>
+        <div class="mobile-feature">
+          <div class="mobile-feature-icon">🔒</div>
+          <h4>Sicuro</h4>
+          <p>Modifiche testate</p>
+        </div>
+        <div class="mobile-feature">
+          <div class="mobile-feature-icon">🛠</div>
+          <h4>Supporto</h4>
+          <p>Assistenza dedicata</p>
+        </div>
+      </div>
+    </div>
+    <!-- Prezzi Section -->
+<div class="mobile-section mobile-shop">
+  <h2 class="mobile-section-title">I Nostri Tweak</h2>
+  
+  <div class="mobile-product-card">
+    <img src="zylon.jpeg" alt="Tweak Console">
+    <div class="mobile-product-info">
+      <h3>Tweak Console</h3>
+      <p class="mobile-product-desc">Il Tweak Console comprende calibrazione dei registri invisibili, incronizzazione del clock interno, bilanciamento random del buffer, tweaking del throghput dei pacchetti nascosti, ottimizzazione della memoria cache.</p>
+      <div class="mobile-product-footer">
+        <span class="mobile-price">€10</span>
+        <a href="https://www.tiktok.com/@zylontweaks" target="_blank" class="mobile-buy-btn">Acquista</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-product-card">
+    <img src="zylon.jpeg" alt="Tweak Basic">
+    <div class="mobile-product-info">
+      <h3>Tweak Basic</h3>
+      <p class="mobile-product-desc">Il Tweak Basic comprende Nvidia Profile Inspector tweak, impostazione Windows generali, riduzione del delay, +FPS, pulizia dei file temporanei, risoluzione di eventuali problemi, ottimizzazione generale.</p>
+      <div class="mobile-product-footer">
+        <span class="mobile-price">€15</span>
+        <a href="https://www.tiktok.com/@zylontweaks" target="_blank" class="mobile-buy-btn">Acquista</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-product-card">
+    <img src="zylon.jpeg" alt="Tweak Avanzato">
+    <div class="mobile-product-info">
+      <h3>Tweak Avanzato</h3>
+      <p class="mobile-product-desc">Il Tweak Avanzato comprende Nvidia Profile Inspector Tweak, impostazioni windows ottimizzate, 0 Delay, ping ridotto e overclock GPU e CPU, regedit tweak, Ethernet tweak/Wi-Fi tweak, pulizia file temporanei.</p>
+      <div class="mobile-product-footer">
+        <span class="mobile-price">€20</span>
+        <a href="https://www.tiktok.com/@zylontweaks" target="_blank" class="mobile-buy-btn">Acquista</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-product-card">
+    <img src="zylon.jpeg" alt="Tweak Hyper Avanzato">
+    <div class="mobile-product-info">
+      <h3>Tweak Hyper Avanzato</h3>
+      <p class="mobile-product-desc">Il tweak comprende 0 delay pack, aggiornamento e ottimizzazione del bios, meno processi, discord debloat, overclock gpu e cpu, 0 delay sia nella tastiera che nel mouse, Ethernet tweak/Wi-Fi tweak.</p>
+      <div class="mobile-product-footer">
+        <span class="mobile-price">€30</span>
+        <a href="https://www.tiktok.com/@zylontweaks" target="_blank" class="mobile-buy-btn">Acquista</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Addons Mobile -->
+  <h3 class="mobile-addon-title">Addon Disponibili</h3>
+  <div class="mobile-addons">
+    <div class="mobile-addon">
+      <span class="mobile-addon-name">Custom OS / BIOS</span>
+      <span class="mobile-addon-price">+5€</span>
+    </div>
+    <div class="mobile-addon">
+      <span class="mobile-addon-name">Supporto 1 mese</span>
+      <span class="mobile-addon-price">+5€</span>
+    </div>
+    <div class="mobile-addon">
+      <span class="mobile-addon-name">Supporto Lifetime</span>
+      <span class="mobile-addon-price">+10€</span>
+    </div>
   </div>
 </div>
 
+<!-- Chi Siamo Section -->
+<div class="mobile-section mobile-about">
+  <h2 class="mobile-section-title">Chi Siamo</h2>
+  <div class="mobile-about-card">
+    <p>Ciao, siamo <strong>Black</strong> e <strong>Cuba</strong>, due professionisti dell'ottimizzazione e del tweaking informatico avanzato. Lavoriamo fianco a fianco nel settore dell'hardware e del software engineering, interessandoci nell'analisi approfondita delle prestazioni dei sistemi e nella loro ottimizzazione a livelli che vanno ben oltre ciò che un comune utente può ottenere da solo.</p>
+    <p>Il nostro obiettivo è sempre stato uno: trasformare ogni PC in una macchina fluida, stabile e performante, cucita su misura per chi la utilizza.</p>
+    <p>Nel nostro lavoro partiamo da un principio chiaro: ogni computer ha un potenziale nascosto, e la maggior parte delle persone non lo sfrutta nemmeno al 50%. Non basta installare due programmi o togliere qualche file superfluo; ciò che facciamo è un intervento tecnico completo, strutturato e professionale.</p>
+  </div>
+</div>
+
+<!-- Contatti Section -->
+<div class="mobile-section mobile-contacts">
+  <h2 class="mobile-section-title">Contatti TikTok</h2>
+  
+  <a href="https://www.tiktok.com/@adixfnbr" target="_blank" class="mobile-contact-card">
+    <span class="mobile-contact-icon">🌐</span>
+    <div>
+      <h4>Website Creator</h4>
+      <p>@adixfnbr</p>
+    </div>
+  </a>
+
+  <a href="https://www.tiktok.com/@zylontweaks" target="_blank" class="mobile-contact-card">
+    <span class="mobile-contact-icon">⚡</span>
+    <div>
+      <h4>Zylon Tweak</h4>
+      <p>@zylontweaks</p>
+    </div>
+  </a>
+
+  <a href="https://www.tiktok.com/@cubawww3" target="_blank" class="mobile-contact-card">
+    <span class="mobile-contact-icon">🔧</span>
+    <div>
+      <h4>Cuba</h4>
+      <p>@cubawww3</p>
+    </div>
+  </a>
+
+  <a href="https://www.tiktok.com/@black0u7fn" target="_blank" class="mobile-contact-card">
+    <span class="mobile-contact-icon">💻</span>
+    <div>
+      <h4>Black</h4>
+      <p>@black0u7fn</p>
+    </div>
+  </a>
+
+  <div class="mobile-credits">
+    <p><strong>Creatore Sito:</strong> Adix</p>
+    <p><strong>Ottimizzatori:</strong> Black & Cuba</p>
+  </div>
+</div>
+
+<!-- Bottone per tornare alla selezione -->
+<div class="mobile-back-section">
+  <button onclick="showSelect()" class="mobile-back-btn">← Torna alla selezione piattaforma</button>
+</div>
+</div>
+</div>
 <!-- ========== PAGINA DESKTOP (SITO COMPLETO) ========== -->
 <div id="desktopPage" class="page">
   <header>
@@ -526,118 +951,113 @@ footer{position:fixed;left:15px;bottom:15px;color:var(--muted);font-size:13px;z-
       <button class="nav-btn" data-index="3">Contatti</button>
     </nav>
   </header>
-
   <main class="stage">
     <div class="sections" id="sections">
-
-      <!-- HOME -->
-      <section class="screen home">
-        <div class="home-box">
-          <img src="zylon.jpeg" alt="Zylon" class="hero-logo">
-          <h1 class="hero-title">La tua ottimizzazione definitiva.</h1>
-          <p class="hero-sub">Migliora stabilità, reattività e prestazioni con il tweak definitivo.</p>
-          <div class="features">
-            <div class="feature"><h4>⚡ Boost immediato</h4><p>Aumento FPS e stabilità.</p></div>
-            <div class="feature"><h4>🔥 Reattività</h4><p>Input più veloci.</p></div>
-            <div class="feature"><h4>🔒 Sicuro</h4><p>Modifiche testate.</p></div>
-            <div class="feature"><h4>🛠 Supporto</h4><p>Assistenza dedicata.</p></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SHOP -->
-      <section class="screen shop">
-        <div class="shop-grid">
-          <div class="product">
-            <img src="zylon.jpeg">
-            <div class="info">
-              <h4>Tweak Console</h4>
-              <p style="color:var(--muted);font-size:14px;margin-bottom:4px"> Il Tweak Console comprende calibrazione dei registri invisibili, incronizzazione del clock interno, bilanciamento random del buffer, tweaking del throghput dei acchetti nascosti, ottimizzazione della memoria cache, regolazione dei micro cicli, parametri del core system affinati.</p>
-              <div class="price">€10</div>
-              <a href="https://www.tiktok.com/@zylontweaks" target="_blank" class="buy">Acquista</a>
-            </div>
-          </div>
-          <div class="product">
-            <img src="zylon.jpeg">
-            <div class="info">
-              <h4>Tweak Basic</h4>
-              <p style="color:var(--muted);font-size:14px;margin-bottom:4px">Il Tweak Basic comprende Nvidia Profile Inspector tweak, impostazione Windows generali, riduzione del delay, +FPS, pulizia dei file temporanei, risoluzione di eventuli problemi, ottimizzazione generale, stabilità del sitema, maggiore fluidità nel sistema, parametr essenziali ottimizzati.  </p>
-              <div class="price">€15</div>
-              <a href="https://www.tiktok.com/@zylontweaks" target="_blank" class="buy">Acquista</a>
-            </div>
-          </div>
-          <div class="product">
-            <img src="zylon.jpeg">
-            <div class="info">
-              <h4>Tweak Avanzato</h4>
-              <p style="color:var(--muted);font-size:14px;margin-bottom:4px">Il Tweak Avanzato comprende Nvidia Profile Inspector Tweak, impostazioni windows ottimizzate, 0 Delay, ping ridotto e overclock GPU e CPU, regedit tweak, Ethernet tweak/Wi-Fi tweak, pulizia file temporanei, discord debloat e riduzione dei procesi in background inutili.</p>
-              <div class="price">€20</div>
-              <a href="https://www.tiktok.com/@zylontweaks" target="_blank" class="buy">Acquista</a>
-            </div>
-          </div>
-          <div class="product">
-            <img src="zylon.jpeg">
-            <div class="info">
-              <h4>Tweak Hyper Avanzato</h4>
-              <p style="color:var(--muted);font-size:13px;margin-bottom:4px">Il tweak comprende 0 delay pack,aggiornamento e ottimizzazione del bios,meno processi,discord debloat,overclock gpu e cpu,0 delay sia nella tastiera che nel mouse,Ethernet tweak/Wi-Fi tweak,pulizia file temporanei,Windows settings,pannello di controllo ottimizzato</p>
-              <div class="price">€30</div>
-              <a href="https://www.tiktok.com/@zylontweaks" target="_blank" class="buy">Acquista</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ADDONS -->
-        <div class="addons-list">
-          <div class="addon-product">
-            <h4>Custom OS / BIOS</h4>
-            <p>Ottimizzazione avanzata</p>
-            <div class="price">+5€</div>
-          </div>
-          <div class="addon-product">
-            <h4>Supporto 1 mese</h4>
-            <p>Assistenza completa</p>
-            <div class="price">+5€</div>
-          </div>
-          <div class="addon-product">
-            <h4>Supporto Lifetime</h4>
-            <p>Supporto illimitato</p>
-            <div class="price">+10€</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ABOUT -->
-      <section class="screen about">
-        <div class="about-card">
-          <h2 class="about-title">Chi siamo</h2>
-          <p class="about-text">Ciao, siamo Black e Cuba, due professionisti dell'ottimizzazione e del tweaking informatico avanzato. Lavoriamo fianco a fianco nel settore dell'hardware e del software engineering, interessandoci nell'analisi approfondita delle prestazioni dei sistemi e nella loro ottimizzazione a livelli che vanno ben oltre ciò che un comune utente può ottenere da solo. Il nostro obiettivo è sempre stato uno: trasformare ogni PC in una macchina fluida, stabile e performante, cucita su misura per chi la utilizza.
-Nel nostro lavoro partiamo da un principio chiaro: ogni computer ha un potenziale nascosto, e la maggior parte delle persone non lo sfrutta nemmeno al 50%. Non basta installare due programmi o togliere qualche file superfluo; ciò che facciamo è un intervento tecnico completo, strutturato e professionale. Analizziamo processi, servizi, architetture, carichi di lavoro e configurazioni interne, intervenendo a livello di sistema operativo, BIOS, driver e reti. Per noi il tweaking non è un'operazione superficiale, ma un vero e proprio processo ingegneristico.Non ci limitiamo a consegnare un PC più veloce: consegniamo una macchina che lavora meglio, reagisce meglio e dura di più. Ogni nostro tuning è unico, perché unico è il rapporto tra utente e dispositivo.Se vuoi che il tuo computer smetta di essere solo un mezzo e diventi uno strumento preciso, calibrato e performante, siamo qui per farlo diventare esattamente ciò che dovrebbe essere: una macchina ottimizzata al massimo del suo potenziale.Cliccando su "Acquista Ora" verrai reindirizzato direttamente al modulo di contatto della pagina, dove potrai richiedere il tuo tweak personalizzato e iniziare l'ottimizzazione del tuo PC con Black e Cuba.</p>
-        </div>
-      </section>
-
-      <!-- CONTATTI -->
-      <section class="screen contacts">
-        <div style="width:100%;max-width:1200px;margin:0 auto">
-          <h1 class="contacts-title">Contatti TikTok</h1>
-          <div class="contacts-grid">
-            <a href="https://www.tiktok.com/@adixfnbr" target="_blank" class="contact-card"><h3>WebSite Creator</h3><p>@adixfnbr</p></a>
-            <a href="https://www.tiktok.com/@zylontweaks" target="_blank" class="contact-card"><h3>Zylon Tweak</h3><p>@zylontweaks</p></a>
-            <a href="https://www.tiktok.com/@cubawww3" target="_blank" class="contact-card"><h3>Cuba</h3><p>@cubawww3</p></a>
-            <a href="https://www.tiktok.com/@black0u7fn" target="_blank" class="contact-card"><h3>Black</h3><p>@black0u7fn</p></a>
-          </div>
-          <div class="credits">
-            <p><strong>Creatore Sito:</strong> Adix</p>
-            <p><strong>Ottimizzatori:</strong> Black & Cuba</p>
-          </div>
-        </div>
-      </section>
-
+        <!-- HOME -->
+  <section class="screen home">
+    <div class="home-box">
+      <img src="zylon.jpeg" alt="Zylon" class="hero-logo">
+      <h1 class="hero-title">La tua ottimizzazione definitiva.</h1>
+      <p class="hero-sub">Migliora stabilità, reattività e prestazioni con il tweak definitivo.</p>
+      <div class="features">
+        <div class="feature"><h4>⚡ Boost immediato</h4><p>Aumento FPS e stabilità.</p></div>
+        <div class="feature"><h4>🔥 Reattività</h4><p>Input più veloci.</p></div>
+        <div class="feature"><h4>🔒 Sicuro</h4><p>Modifiche testate.</p></div>
+        <div class="feature"><h4>🛠 Supporto</h4><p>Assistenza dedicata.</p></div>
+      </div>
     </div>
-  </main>
+  </section>
 
+  <!-- SHOP -->
+  <section class="screen shop">
+    <div class="shop-grid">
+      <div class="product">
+        <img src="zylon.jpeg">
+        <div class="info">
+          <h4>Tweak Console</h4>
+          <p style="color:var(--muted);font-size:14px;margin-bottom:4px"> Il Tweak Console comprende calibrazione dei registri invisibili, incronizzazione del clock interno, bilanciamento random del buffer, tweaking del throghput dei acchetti nascosti, ottimizzazione della memoria cache, regolazione dei micro cicli, parametri del core system affinati.</p>
+          <div class="price">€10</div>
+          <a href="https://www.tiktok.com/@zylontweaks" target="_blank" class="buy">Acquista</a>
+        </div>
+      </div>
+      <div class="product">
+        <img src="zylon.jpeg">
+        <div class="info">
+          <h4>Tweak Basic</h4>
+          <p style="color:var(--muted);font-size:14px;margin-bottom:4px">Il Tweak Basic comprende Nvidia Profile Inspector tweak, impostazione Windows generali, riduzione del delay, +FPS, pulizia dei file temporanei, risoluzione di eventuli problemi, ottimizzazione generale, stabilità del sitema, maggiore fluidità nel sistema, parametr essenziali ottimizzati.  </p>
+          <div class="price">€15</div>
+          <a href="https://www.tiktok.com/@zylontweaks" target="_blank" class="buy">Acquista</a>
+        </div>
+      </div>
+      <div class="product">
+        <img src="zylon.jpeg">
+        <div class="info">
+          <h4>Tweak Avanzato</h4>
+          <p style="color:var(--muted);font-size:14px;margin-bottom:4px">Il Tweak Avanzato comprende Nvidia Profile Inspector Tweak, impostazioni windows ottimizzate, 0 Delay, ping ridotto e overclock GPU e CPU, regedit tweak, Ethernet tweak/Wi-Fi tweak, pulizia file temporanei, discord debloat e riduzione dei procesi in background inutili.</p>
+          <div class="price">€20</div>
+          <a href="https://www.tiktok.com/@zylontweaks" target="_blank" class="buy">Acquista</a>
+        </div>
+      </div>
+      <div class="product">
+        <img src="zylon.jpeg">
+        <div class="info">
+          <h4>Tweak Hyper Avanzato</h4>
+          <p style="color:var(--muted);font-size:13px;margin-bottom:4px">Il tweak comprende 0 delay pack,aggiornamento e ottimizzazione del bios,meno processi,discord debloat,overclock gpu e cpu,0 delay sia nella tastiera che nel mouse,Ethernet tweak/Wi-Fi tweak,pulizia file temporanei,Windows settings,pannello di controllo ottimizzato</p>
+          <div class="price">€30</div>
+          <a href="https://www.tiktok.com/@zylontweaks" target="_blank" class="buy">Acquista</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADDONS -->
+    <div class="addons-list">
+      <div class="addon-product">
+        <h4>Custom OS / BIOS</h4>
+        <p>Ottimizzazione avanzata</p>
+        <div class="price">+5€</div>
+      </div>
+      <div class="addon-product">
+        <h4>Supporto 1 mese</h4>
+        <p>Assistenza completa</p>
+        <div class="price">+5€</div>
+      </div>
+      <div class="addon-product">
+        <h4>Supporto Lifetime</h4>
+        <p>Supporto illimitato</p>
+        <div class="price">+10€</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="screen about">
+    <div class="about-card">
+      <h2 class="about-title">Chi siamo</h2>
+      <p class="about-text">Ciao, siamo Black e Cuba, due professionisti dell'ottimizzazione e del tweaking informatico avanzato. Lavoriamo fianco a fianco nel settore dell'hardware e del software engineering, interessandoci nell'analisi approfondita delle prestazioni dei sistemi e nella loro ottimizzazione a livelli che vanno ben oltre ciò che un comune utente può ottenere da solo. Il nostro obiettivo è sempre stato uno: trasformare ogni PC in una macchina fluida, stabile e performante, cucita su misura per chi la utilizza.
+Nel nostro lavoro partiamo da un principio chiaro: ogni computer ha un potenziale nascosto, e la maggior parte delle persone non lo sfrutta nemmeno al 50%. Non basta installare due programmi o togliere qualche file superfluo; ciò che facciamo è un intervento tecnico completo, strutturato e professionale. Analizziamo processi, servizi, architetture, carichi di lavoro e configurazioni interne, intervenendo a livello di sistema operativo, BIOS, driver e reti. Per noi il tweaking non è un'operazione superficiale, ma un vero e proprio processo ingegneristico.Non ci limitiamo a consegnare un PC più veloce: consegniamo una macchina che lavora meglio, reagisce meglio e dura di più. Ogni nostro tuning è unico, perché unico è il rapporto tra utente e dispositivo.Se vuoi che il tuo computer smetta di essere solo un mezzo e diventi uno strumento preciso, calibrato e performante, siamo qui per farlo diventare esattamente ciò che dovrebbe essere: una macchina ottimizzata al massimo del suo potenziale.Cliccando su "Acquista Ora" verrai reindirizzato direttamente al modulo di contatto della pagina, dove potrai richiedere il tuo tweak personalizzato e iniziare l'ottimizzazione del tuo PC con Black e Cuba.</p>
+</div>
+</section>
+<!-- CONTATTI -->
+  <section class="screen contacts">
+    <div style="width:100%;max-width:1200px;margin:0 auto">
+      <h1 class="contacts-title">Contatti TikTok</h1>
+      <div class="contacts-grid">
+        <a href="https://www.tiktok.com/@adixfnbr" target="_blank" class="contact-card"><h3>WebSite Creator</h3><p>@adixfnbr</p></a>
+        <a href="https://www.tiktok.com/@zylontweaks" target="_blank" class="contact-card"><h3>Zylon Tweak</h3><p>@zylontweaks</p></a>
+        <a href="https://www.tiktok.com/@cubawww3" target="_blank" class="contact-card"><h3>Cuba</h3><p>@cubawww3</p></a>
+        <a href="https://www.tiktok.com/@black0u7fn" target="_blank" class="contact-card"><h3>Black</h3><p>@black0u7fn</p></a>
+      </div>
+      <div class="credits">
+        <p><strong>Creatore Sito:</strong> Adix</p>
+        <p><strong>Ottimizzatori:</strong> Black & Cuba</p>
+      </div>
+    </div>
+  </section>
+
+</div>ù
+</main>
   <footer>© Zylon Tweak</footer>
 </div>
-
 <script>
 // Gestione pagine principali
 function showDesktop() {
@@ -687,6 +1107,5 @@ window.addEventListener("touchmove", e => {
   }
 }, {passive: false});
 </script>
-
 </body>
 </html>
