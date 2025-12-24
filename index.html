@@ -630,14 +630,14 @@ section.screen{width:100vw;height:100vh;padding:100px 28px 40px;display:flex;ali
 .addon-product{
   background:rgba(255,255,255,0.03);
   border-radius:16px;
-  padding:25px 20px;
+  padding:35px 30px;
   border:1px solid rgba(255,255,255,0.05);
   text-align:center;
   box-shadow:0 8px 20px rgba(0,0,0,0.4);
   display:flex;
   flex-direction:column;
   justify-content:center;
-  gap:10px;
+  gap:12px;
   transition: 0.3s var(--ease);
   animation: fadeIn 1s var(--ease) backwards;
 }
@@ -649,13 +649,13 @@ section.screen{width:100vw;height:100vh;padding:100px 28px 40px;display:flex;ali
   box-shadow:0 15px 40px rgba(154,59,255,0.3);
 }
 .addon-product h4{
-  font-size:18px;color:var(--accent);
+  font-size:22px;color:var(--accent);
 }
 .addon-product p{
-  font-size:13px;color:var(--muted);
+  font-size:15px;color:var(--muted);
 }
 .addon-product .price{
-  font-size:24px;color:var(--accent2);font-weight:900;
+  font-size:28px;color:var(--accent2);font-weight:900;
 }
 
 /* ABOUT */
@@ -909,14 +909,10 @@ footer{position:fixed;left:15px;bottom:15px;color:var(--muted);font-size:13px;z-
       </div>
 
       <!-- Addons Mobile -->
-      <h3 class="mobile-addon-title">Addon Disponibili</h3>
-      <div class="mobile-addons">
+      <h3 class="mobile-addon-title">Addon Disponibile</h3>
+      <div class="mobile-addons" style="grid-template-columns:1fr;">
         <div class="mobile-addon">
-          <span class="mobile-addon-name">Custom OS / BIOS</span>
-          <span class="mobile-addon-price">+5€</span>
-        </div>
-        <div class="mobile-addon">
-          <span class="mobile-addon-name">Supporto Lifetime</span>
+          <span class="mobile-addon-name">Tweak BIOS + Supporto Lifetime</span>
           <span class="mobile-addon-price">+10€</span>
         </div>
       </div>
@@ -1056,14 +1052,9 @@ footer{position:fixed;left:15px;bottom:15px;color:var(--muted);font-size:13px;z-
 
           <!-- ADDONS -->
           <div class="addons-list">
-            <div class="addon-product">
-              <h4>Custom OS / BIOS</h4>
-              <p>Ottimizzazione avanzata del sistema operativo e BIOS</p>
-              <div class="price">+5€</div>
-            </div>
-            <div class="addon-product">
-              <h4>Supporto Lifetime</h4>
-              <p>Assistenza e supporto illimitato nel tempo</p>
+            <div class="addon-product" style="grid-column:1/-1;max-width:100%;margin:0 auto;">
+              <h4>Tweak BIOS + Supporto Lifetime</h4>
+              <p>Ottimizzazione avanzata del BIOS e assistenza illimitata nel tempo</p>
               <div class="price">+10€</div>
             </div>
           </div>
@@ -1110,7 +1101,7 @@ Le prestazioni non sono solo FPS più alti, ma reattività migliore, ritardi inf
               <div class="social-links">
                 <a href="https://discord.gg/zylontweak" target="_blank" class="social-card">
                   <div class="social-icon-wrapper discord-icon">
-                    <img src="discord.png" alt="Discord">
+                    <img src="discord-icon.png" alt="Discord">
                   </div>
                   <div class="social-info">
                     <div class="social-platform">Discord</div>
@@ -1120,7 +1111,7 @@ Le prestazioni non sono solo FPS più alti, ma reattività migliore, ritardi inf
                 </a>
                 <a href="https://www.tiktok.com/@zylontweaks" target="_blank" class="social-card">
                   <div class="social-icon-wrapper tiktok-icon">
-                    <img src="tiktok.png" alt="TikTok">
+                    <img src="tiktok-icon.png" alt="TikTok">
                   </div>
                   <div class="social-info">
                     <div class="social-platform">TikTok</div>
@@ -1140,7 +1131,7 @@ Le prestazioni non sono solo FPS più alti, ma reattività migliore, ritardi inf
               <div class="social-links">
                 <a href="https://discord.gg/adixfnbr" target="_blank" class="social-card">
                   <div class="social-icon-wrapper discord-icon">
-                    <img src="discord.png" alt="Discord">
+                    <img src="discord-icon.png" alt="Discord">
                   </div>
                   <div class="social-info">
                     <div class="social-platform">Discord</div>
@@ -1150,7 +1141,7 @@ Le prestazioni non sono solo FPS più alti, ma reattività migliore, ritardi inf
                 </a>
                 <a href="https://www.tiktok.com/@adixfnbr" target="_blank" class="social-card">
                   <div class="social-icon-wrapper tiktok-icon">
-                    <img src="tiktok.png" alt="TikTok">
+                    <img src="tiktok-icon.png" alt="TikTok">
                   </div>
                   <div class="social-info">
                     <div class="social-platform">TikTok</div>
